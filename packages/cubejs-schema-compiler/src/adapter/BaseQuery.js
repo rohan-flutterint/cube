@@ -2757,6 +2757,11 @@ export class BaseQuery {
     throw new Error('Not implemented');
   }
 
+  /**
+   * @param {string} granularity
+   * @param {string} dimension
+   * @return {string}
+   */
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   timeGroupedColumn(granularity, dimension) {
     throw new Error('Not implemented');
