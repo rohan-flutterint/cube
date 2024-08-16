@@ -2906,8 +2906,7 @@ export class BaseQuery {
    * @returns {string}
    */
   startOfTheYearTimestampSql() {
-    // different DBs have different way of getting this
-    throw new Error('Not implemented');
+    return `DATE_TRUNC('year', ${this.nowTimestampSql()})`;
   }
 
   unixTimestampSql() {

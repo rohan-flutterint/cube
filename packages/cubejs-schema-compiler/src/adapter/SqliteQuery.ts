@@ -75,4 +75,11 @@ export class SqliteQuery extends BaseQuery {
     // eslint-disable-next-line quotes
     return `strftime('%s','now')`;
   }
+
+  /**
+   * @override
+   */
+  public startOfTheYearTimestampSql() {
+    return 'DATETIME(STRFTIME(\'%Y\', \'now\') || \'-01-01 00:00:00\')';
+  }
 }

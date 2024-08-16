@@ -119,6 +119,13 @@ export class BigqueryQuery extends BaseQuery {
     return 'CURRENT_TIMESTAMP()';
   }
 
+  /**
+   * @override
+   */
+  public startOfTheYearTimestampSql() {
+    return `DATETIME_TRUNC(${this.nowTimestampSql()}, YEAR)`;
+  }
+
   public unixTimestampSql() {
     return `UNIX_SECONDS(${this.nowTimestampSql()})`;
   }

@@ -98,6 +98,13 @@ export class OracleQuery extends BaseQuery {
     return `((cast (systimestamp at time zone 'UTC' as date) - date '1970-01-01') * 86400)`;
   }
 
+  /**
+   * @override
+   */
+  public startOfTheYearTimestampSql() {
+    return 'TRUNC(SYSTIMESTAMP, \'YEAR\')';
+  }
+
   public preAggregationTableName(cube, preAggregationName, skipSchema) {
     const name = super.preAggregationTableName(cube, preAggregationName, skipSchema);
     if (name.length > 128) {

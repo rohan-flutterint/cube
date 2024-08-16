@@ -154,6 +154,14 @@ export class MssqlQuery extends BaseQuery {
     return `DATEDIFF(SECOND,'1970-01-01', GETUTCDATE())`;
   }
 
+  /**
+   * @override
+   * DATETRUNC appeared in SQL Server 2022 (16.x).
+   */
+  public startOfTheYearTimestampSql() {
+    return 'CAST(CONCAT(YEAR(GETDATE()), \'-01-01 00:00:00\') AS DATETIME)';
+  }
+
   public preAggregationLoadSql(cube, preAggregation, tableName) {
     const sqlAndParams = this.preAggregationSql(cube, preAggregation);
     return [`SELECT * INTO ${tableName} FROM (${sqlAndParams[0]}) AS PreAggregation`, sqlAndParams[1]];

@@ -71,6 +71,13 @@ export class MysqlQuery extends BaseQuery {
     return `CONCAT(${strings.join(', ')})`;
   }
 
+  /**
+   * @override
+   */
+  public startOfTheYearTimestampSql() {
+    return 'TIMESTAMP(MAKEDATE(YEAR(CURDATE()), 1))';
+  }
+
   public unixTimestampSql() {
     return 'UNIX_TIMESTAMP()';
   }

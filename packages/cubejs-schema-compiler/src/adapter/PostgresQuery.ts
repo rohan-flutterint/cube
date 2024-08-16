@@ -35,10 +35,6 @@ export class PostgresQuery extends BaseQuery {
     return `date_bin('${stride}', ${source}, ${origin})`;
   }
 
-  public startOfTheYearTimestampSql() {
-    return 'date_trunc(\'year\', CURRENT_TIMESTAMP)';
-  }
-
   public hllInit(sql) {
     return `hll_add_agg(hll_hash_any(${sql}))`;
   }
