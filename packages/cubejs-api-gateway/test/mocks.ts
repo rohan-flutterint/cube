@@ -80,15 +80,18 @@ export const compilerApi = jest.fn().mockImplementation(async () => ({
       {
         config: {
           name: 'Foo',
+          description: 'cube from compilerApi mock',
           measures: [
             {
               name: 'Foo.bar',
+              description: 'measure from compilerApi mock',
               isVisible: true,
             },
           ],
           dimensions: [
             {
               name: 'Foo.id',
+              description: 'id dimension from compilerApi mock',
               isVisible: true,
             },
             {
@@ -106,9 +109,11 @@ export const compilerApi = jest.fn().mockImplementation(async () => ({
       {
         config: {
           name: 'Foo',
+          description: 'cube from compilerApi mock',
           measures: [
             {
               name: 'Foo.bar',
+              description: 'measure from compilerApi mock',
               sql: 'bar',
               isVisible: true,
             },
@@ -116,6 +121,7 @@ export const compilerApi = jest.fn().mockImplementation(async () => ({
           dimensions: [
             {
               name: 'Foo.id',
+              description: 'id dimension from compilerApi mock',
               isVisible: true,
             },
             {

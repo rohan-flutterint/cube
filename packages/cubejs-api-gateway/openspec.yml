@@ -104,6 +104,8 @@ components:
       properties:
         name:
           type: "string"
+        description:
+          type: "string"
         type:
           type: "string"
     V1CubeMetaMeasure:
@@ -115,6 +117,8 @@ components:
         name:
           type: "string"
         title:
+          type: "string"
+        description:
           type: "string"
         type:
           type: "string"
@@ -131,6 +135,8 @@ components:
         name:
           type: "string"
         title:
+          type: "string"
+        description:
           type: "string"
         measures:
           type: "array"
