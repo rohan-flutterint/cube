@@ -2788,6 +2788,9 @@ export class BaseQuery {
    * @returns {boolean}
    */
   isGranularityNaturalAligned(interval) {
+    if (!interval) {
+      throw new Error('No interval. WTF?');
+    }
     const intParsed = interval.split(' ');
 
     return !(intParsed.length !== 2 || intParsed[0] !== '1');
